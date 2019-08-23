@@ -39,6 +39,10 @@ export class BinaryReader {
     }
     return this.SetLittleEndian();
   }
+
+  GetEndianness() : Endianness {
+    return this.littleEndian ? Endianness.le : Endianness.be;
+  }
   SetLittleEndian(): BinaryReader {
     this.littleEndian = true;
     return this;

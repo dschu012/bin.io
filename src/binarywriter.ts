@@ -35,6 +35,10 @@ export class BinaryWriter {
     }
     return this.SetLittleEndian();
   }
+
+  GetEndianness() : Endianness {
+    return this.littleEndian ? Endianness.le : Endianness.be;
+  }
   SetLittleEndian(): BinaryWriter {
     this.littleEndian = true;
     return this;
