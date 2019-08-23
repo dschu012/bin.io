@@ -1,4 +1,5 @@
 import { Buffer } from "buffer/";
+import { Endianness } from "./constants";
 
 export class BinaryReader {
 
@@ -32,6 +33,12 @@ export class BinaryReader {
     return this.buffer.toString("utf8", start, this.offset++);
   }
 
+  SetEndianness(endiannes: Endianness) : BinaryReader {
+    if(endiannes === Endianness.be) {
+      return this.SetBigEndian();
+    }
+    return this.SetLittleEndian();
+  }
   SetLittleEndian(): BinaryReader {
     this.littleEndian = true;
     return this;

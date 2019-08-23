@@ -1,4 +1,5 @@
 import { Buffer } from "buffer/";
+import { Endianness } from "./constants";
 
 export class BinaryWriter {
 
@@ -28,6 +29,12 @@ export class BinaryWriter {
     }
   }
 
+  SetEndianness(endiannes: Endianness) : BinaryWriter {
+    if(endiannes === Endianness.be) {
+      return this.SetBigEndian();
+    }
+    return this.SetLittleEndian();
+  }
   SetLittleEndian(): BinaryWriter {
     this.littleEndian = true;
     return this;
