@@ -25,7 +25,7 @@
     "typescript": "^3.5.3",
     "ts-loader": "^6.0.4",
     "webpack": "^4.39.1",
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^3.3.12"
   },
   "files": [
     "lib/**/*"
